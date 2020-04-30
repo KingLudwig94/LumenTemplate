@@ -1,0 +1,4 @@
+To create a new table in the database execute in the terminal:
+php artisan make:migration create_TABLENAME_table
+
+Navigate to database/migration folder and open the newly created file.
