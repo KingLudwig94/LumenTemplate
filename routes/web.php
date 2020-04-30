@@ -15,8 +15,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 }); 
 
-$router->group(['prefix'=>'first'], function () use ($router){
-    $router->post('showAll',['uses'=>'FirstController@showAllData']);
+$router->group(['prefix'=>'first', 'middleware'=>'client'], function () use ($router){
+    $router->post('showAll',['uses'=>'FirstController@showAll']);
     $router->post('show/{id}',['uses'=>'FirstController@show']);
     $router->put('add',['uses'=>'FirstController@add']);
     $router->put('edit/{id}',['uses'=>'FirstController@update']);

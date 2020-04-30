@@ -13,16 +13,16 @@ class CreateSECONDTable extends Migration
      */
     public function up()
     {
-        Schema::create('_s_e_c_o_n_d', function (Blueprint $table) {
+        Schema::create('seconds', function (Blueprint $table) {
             $table->integer('id');
             $table->string('extName');
             $table->boolean('exists');
             $table->timestamps();
         });
 
-        Schema::table('_s_e_c_o_n_d', function ($table) {
+        Schema::table('seconds', function ($table) {
             $table->primary('id');
-            $table->foreign('extName')->references('name')->on('_f_i_r_s_t')->onDelete('cascade');
+            $table->foreign('extName')->references('name')->on('firsts')->onDelete('cascade');
         });
     }
 

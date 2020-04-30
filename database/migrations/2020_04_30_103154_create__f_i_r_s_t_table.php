@@ -13,12 +13,12 @@ class CreateFIRSTTable extends Migration
      */
     public function up()
     {
-        Schema::create('_f_i_r_s_t', function (Blueprint $table) {
+        Schema::create('firsts', function (Blueprint $table) {
             $table->integer('number');
             $table->string('name');
             $table->timestamps();
         });
-        Schema::table('_f_i_r_s_t', function ($table) {
+        Schema::table('firsts', function ($table) {
             $table->primary('name');
         });
     }
